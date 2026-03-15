@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+
+    <!-- Deep forge background -->
+    <radialGradient id="bgRadial" cx="50%" cy="45%" r="55%">
+      <stop offset="0%"   stop-color="#1c2333"/>
+      <stop offset="100%" stop-color="#0a0d14"/>
+    </radialGradient>
+
+    <!-- Molten amber -->
+    <linearGradient id="molten" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#b83200"/>
+      <stop offset="45%"  stop-color="#f05c00"/>
+      <stop offset="80%"  stop-color="#ff8c00"/>
+      <stop offset="100%" stop-color="#ffc947"/>
+    </linearGradient>
+
+    <!-- Cold steel -->
+    <linearGradient id="steel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#e8ecf0"/>
+      <stop offset="40%"  stop-color="#b0bec5"/>
+      <stop offset="100%" stop-color="#607d8b"/>
+    </linearGradient>
+
+    <!-- Dark steel plate -->
+    <linearGradient id="darkSteel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#546e7a"/>
+      <stop offset="100%" stop-color="#263238"/>
+    </linearGradient>
+
+    <!-- Gear face gradient -->
+    <linearGradient id="gearFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#78909c"/>
+      <stop offset="100%" stop-color="#37474f"/>
+    </linearGradient>
+
+    <!-- Handle wood -->
+    <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#5d3a1a"/>
+      <stop offset="50%"  stop-color="#7b4f2a"/>
+      <stop offset="100%" stop-color="#4a2f13"/>
+    </linearGradient>
+
+    <!-- Fire core glow -->
+    <radialGradient id="fireCore" cx="50%" cy="70%" r="60%">
+      <stop offset="0%"   stop-color="#ffe066" stop-opacity="1"/>
+      <stop offset="40%"  stop-color="#ff8c00" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#b83200" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Strong glow -->
+    <filter id="strongGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Soft drop shadow -->
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Emboss -->
+    <filter id="emboss">
+      <feConvolveMatrix order="3" kernelMatrix="-2 -1 0 -1 1 1 0 1 2"/>
+    </filter>
+
+    <!-- Rivet shadow -->
+    <radialGradient id="rivetGrad" cx="35%" cy="35%" r="60%">
+      <stop offset="0%"   stop-color="#cfd8dc"/>
+      <stop offset="100%" stop-color="#37474f"/>
+    </radialGradient>
+
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════
+       BACKGROUND — dark forge plate with vignette
+  ════════════════════════════════════════════════ -->
+  <rect width="400" height="400" rx="36" fill="url(#bgRadial)"/>
+
+  <!-- Subtle steel plate texture lines -->
+  <rect width="400" height="400" rx="36" fill="none" stroke="#ffffff04" stroke-width="0"/>
+  <line x1="0" y1="133" x2="400" y2="133" stroke="#ffffff03" stroke-width="1"/>
+  <line x1="0" y1="267" x2="400" y2="267" stroke="#ffffff03" stroke-width="1"/>
+  <line x1="133" y1="0" x2="133" y2="400" stroke="#ffffff03" stroke-width="1"/>
+  <line x1="267" y1="0" x2="267" y2="400" stroke="#ffffff03" stroke-width="1"/>
+
+  <!-- Corner rivets -->
+  <circle cx="38"  cy="38"  r="7" fill="url(#rivetGrad)" filter="url(#dropShadow)"/>
+  <circle cx="362" cy="38"  r="7" fill="url(#rivetGrad)" filter="url(#dropShadow)"/>
+  <circle cx="38"  cy="362" r="7" fill="url(#rivetGrad)" filter="url(#dropShadow)"/>
+  <circle cx="362" cy="362" r="7" fill="url(#rivetGrad)" filter="url(#dropShadow)"/>
+
+  <!-- Outer border plate -->
+  <rect x="4" y="4" width="392" height="392" rx="33" fill="none" stroke="#2e3d4f" stroke-width="2.5"/>
+  <rect x="10" y="10" width="380" height="380" rx="29" fill="none" stroke="#1a2535" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════
+       GEAR LEFT (large background gear)
+  ════════════════════════════════════════════════ -->
+  <g transform="translate(118, 210)" opacity="0.9" filter="url(#dropShadow)">
+    <!-- Gear teeth (12 teeth) -->
+    <g fill="url(#gearFace)">
+      <rect x="-8" y="-95" width="16" height="22" rx="3"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(30)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(60)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(90)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(120)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(150)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(180)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(210)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(240)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(270)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(300)"/>
+      <rect x="-8" y="-95" width="16" height="22" rx="3" transform="rotate(330)"/>
+    </g>
+    <!-- Gear body -->
+    <circle r="80" fill="url(#gearFace)"/>
+    <!-- Gear inner ring -->
+    <circle r="56" fill="#1c2333"/>
+    <circle r="56" fill="none" stroke="#546e7a" stroke-width="3"/>
+    <!-- Spoke details -->
+    <line x1="0" y1="-50" x2="0"   y2="50"  stroke="#546e7a" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-50" y1="0" x2="50"  y2="0"   stroke="#546e7a" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-35" y1="-35" x2="35" y2="35" stroke="#546e7a" stroke-width="5" stroke-linecap="round"/>
+    <line x1="35" y1="-35" x2="-35" y2="35" stroke="#546e7a" stroke-width="5" stroke-linecap="round"/>
+    <!-- Center hub -->
+    <circle r="18" fill="url(#darkSteel)" stroke="#78909c" stroke-width="3"/>
+    <circle r="7"  fill="#0a0d14" stroke="#546e7a" stroke-width="2"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       GEAR RIGHT (smaller, interlocking)
+  ════════════════════════════════════════════════ -->
+  <g transform="translate(278, 242)" opacity="0.85" filter="url(#dropShadow)">
+    <!-- Gear teeth (10 teeth) -->
+    <g fill="url(#darkSteel)">
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(36)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(72)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(108)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(144)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(180)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(216)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(252)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(288)"/>
+      <rect x="-6" y="-68" width="12" height="18" rx="2.5" transform="rotate(324)"/>
+    </g>
+    <circle r="56" fill="url(#darkSteel)"/>
+    <circle r="38" fill="#1c2333"/>
+    <circle r="38" fill="none" stroke="#455a64" stroke-width="2.5"/>
+    <line x1="0" y1="-33" x2="0"   y2="33"  stroke="#455a64" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-33" y1="0" x2="33"  y2="0"   stroke="#455a64" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-23" y1="-23" x2="23" y2="23" stroke="#455a64" stroke-width="4" stroke-linecap="round"/>
+    <line x1="23" y1="-23" x2="-23" y2="23" stroke="#455a64" stroke-width="4" stroke-linecap="round"/>
+    <circle r="12" fill="url(#darkSteel)" stroke="#607d8b" stroke-width="2.5"/>
+    <circle r="5"  fill="#0a0d14" stroke="#455a64" stroke-width="1.5"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       ANVIL
+  ════════════════════════════════════════════════ -->
+  <!-- Anvil base feet -->
+  <rect x="142" y="318" width="32" height="18" rx="4" fill="url(#darkSteel)" filter="url(#dropShadow)"/>
+  <rect x="226" y="318" width="32" height="18" rx="4" fill="url(#darkSteel)" filter="url(#dropShadow)"/>
+  <!-- Base plate -->
+  <rect x="130" y="302" width="140" height="20" rx="5" fill="url(#steel)" filter="url(#dropShadow)"/>
+  <!-- Body taper -->
+  <path d="M148 302 L158 248 L242 248 L252 302 Z" fill="url(#steel)" filter="url(#dropShadow)"/>
+  <!-- Top flat face -->
+  <rect x="118" y="232" width="164" height="22" rx="6" fill="url(#steel)" filter="url(#dropShadow)"/>
+  <!-- Anvil horn (bick) -->
+  <path d="M118 240 L82 252 L118 254 Z" fill="url(#steel)" filter="url(#dropShadow)"/>
+  <!-- Top face highlight -->
+  <rect x="120" y="234" width="160" height="7" rx="3" fill="#e8ecf0" opacity="0.35"/>
+  <!-- Side plate detail line -->
+  <line x1="160" y1="252" x2="240" y2="252" stroke="#78909c" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- ═══════════════════════════════════════════════
+       HAMMER
+  ════════════════════════════════════════════════ -->
+  <g transform="rotate(-38, 200, 185)" filter="url(#dropShadow)">
+    <!-- Handle -->
+    <rect x="196" y="170" width="14" height="115" rx="7" fill="url(#wood)"/>
+    <!-- Handle wrap grip bands -->
+    <rect x="196" y="230" width="14" height="5" rx="2" fill="#3b1f08" opacity="0.6"/>
+    <rect x="196" y="250" width="14" height="5" rx="2" fill="#3b1f08" opacity="0.6"/>
+    <!-- Hammer head -->
+    <rect x="162" y="126" width="80" height="50" rx="9" fill="url(#steel)"/>
+    <!-- Face bevel highlight -->
+    <rect x="162" y="126" width="40" height="50" rx="9" fill="#e8ecf0" opacity="0.25"/>
+    <!-- Top edge highlight -->
+    <rect x="162" y="126" width="80" height="10" rx="9" fill="#ffffff" opacity="0.18"/>
+    <!-- Strike face (right end chamfer) -->
+    <rect x="230" y="132" width="12" height="38" rx="4" fill="url(#molten)" opacity="0.7"/>
+    <!-- Poll (left end) -->
+    <rect x="162" y="134" width="18" height="26" rx="4" fill="#90a4ae" opacity="0.6"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       IMPACT FLASH — molten spark burst
+  ════════════════════════════════════════════════ -->
+  <g transform="translate(200, 232)" filter="url(#strongGlow)">
+    <!-- Glow pool -->
+    <ellipse cx="0" cy="0" rx="32" ry="12" fill="url(#fireCore)" opacity="0.85"/>
+    <!-- Main sparks -->
+    <line x1="0" y1="0" x2="-38" y2="-42" stroke="#ffe066" stroke-width="3"   stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="40"  y2="-36" stroke="#ffa500" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-50" y2="-18" stroke="#ff8c00" stroke-width="2"   stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="52"  y2="-10" stroke="#ff6a00" stroke-width="2"   stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-28" y2="-52" stroke="#ffc947" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="22"  y2="-54" stroke="#ffe066" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-60" y2="-4"  stroke="#f05c00" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="58"  y2="8"   stroke="#ff6a00" stroke-width="1"   stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-16" y2="18"  stroke="#ffa500" stroke-width="1"   stroke-linecap="round"/>
+    <!-- Small ember dots -->
+    <circle cx="-42" cy="-44" r="3" fill="#ffe066"/>
+    <circle cx="43"  cy="-38" r="2.5" fill="#ffc947"/>
+    <circle cx="-52" cy="-20" r="2" fill="#ff8c00"/>
+    <circle cx="55"  cy="-12" r="2" fill="#ffa500"/>
+    <circle cx="-30" cy="-55" r="2" fill="#ffe066"/>
+    <circle cx="24"  cy="-57" r="1.5" fill="#ffd166"/>
+    <!-- Hot core -->
+    <circle cx="0" cy="0" r="8" fill="#ffe066"/>
+    <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       "TF" MONOGRAM BADGE — top-left stamp
+  ════════════════════════════════════════════════ -->
+  <g transform="translate(62, 65)">
+    <rect x="-28" y="-22" width="56" height="44" rx="6" fill="#0a0d14" stroke="#2e3d4f" stroke-width="2"/>
+    <text font-family="'Georgia', 'Times New Roman', serif" font-size="26" font-weight="700"
+          fill="url(#molten)" text-anchor="middle" dominant-baseline="central" letter-spacing="-1">TF</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       WORDMARK — bottom label plate
+  ════════════════════════════════════════════════ -->
+  <!-- Label plate -->
+  <rect x="72" y="345" width="256" height="40" rx="6" fill="#111827" stroke="#2e3d4f" stroke-width="1.5"/>
+  <rect x="74" y="347" width="252" height="36" rx="5" fill="none" stroke="#1e2d3d" stroke-width="1"/>
+
+  <!-- TEAM -->
+  <text x="118" y="371"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-size="17" font-weight="900" font-style="normal"
+        fill="#c9d6df" text-anchor="middle" letter-spacing="3">TEAM</text>
+
+  <!-- Divider pip -->
+  <rect x="151" y="358" width="3" height="16" rx="1.5" fill="url(#molten)" opacity="0.8"/>
+
+  <!-- FORGE -->
+  <text x="270" y="371"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-size="17" font-weight="900"
+        fill="url(#molten)" text-anchor="middle" letter-spacing="3">FORGE</text>
+
+</svg>
